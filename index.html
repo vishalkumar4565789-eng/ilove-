@@ -1,266 +1,222 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Trending with MUNAAF</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trade with Gautam jha </title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+        body {
+            background-color: #000;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 15px;
+        }
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Poppins',sans-serif;
-}
+        .container {
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
 
-body{
-background:#050816;
-color:#fff;
-overflow-x:hidden;
-}
+        /* Profile Image Wrapper */
+        .profile-container {
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            border: 3px solid #fff;
+            overflow: hidden;
+            box-shadow: 0 0 25px rgba(255, 255, 255, 0.2);
+            margin-bottom: 5px;
+        }
 
-.hero{
-min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
-padding:40px 8%;
-position:relative;
-background:
-radial-gradient(circle at top right,#00ff9d20,transparent 35%),
-radial-gradient(circle at bottom left,#3b82f620,transparent 35%),
-#050816;
-}
+        .profile-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
 
-.hero::before{
-content:'';
-position:absolute;
-width:350px;
-height:350px;
-background:#00ff9d;
-filter:blur(180px);
-opacity:.15;
-top:-80px;
-right:-100px;
-}
+        /* Title Box */
+        .title-box {
+            width: 100%;
+            border: 1.5px solid #fff;
+            border-radius: 8px;
+            padding: 12px 10px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: 'Georgia', serif;
+            letter-spacing: 0.5px;
+        }
 
-.hero-content{
-max-width:1200px;
-width:100%;
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:60px;
-align-items:center;
-}
+        /* Call To Action Button */
+        .btn-join {
+            width: 100%;
+            padding: 14px 10px;
+            background: linear-gradient(180deg, #1b75bc 0%, #004080 100%);
+            border: 1.5px solid #fff;
+            border-radius: 4px;
+            color: #fff;
+            font-size: 17px;
+            font-weight: bold;
+            text-decoration: none;
+            display: block;
+            box-shadow: 0 4px 15px rgba(0, 102, 204, 0.4);
+            letter-spacing: 0.5px;
+        }
 
-.badge{
-display:inline-block;
-padding:10px 18px;
-background:rgba(255,255,255,.08);
-border:1px solid rgba(255,255,255,.1);
-backdrop-filter:blur(10px);
-border-radius:50px;
-font-size:14px;
-color:#00ff9d;
-margin-bottom:25px;
-}
+        /* Click Here Pointer */
+        .click-here {
+            font-size: 26px;
+            font-weight: 800;
+            color: #38b6ff;
+            margin: 2px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
 
-h1{
-font-size:64px;
-line-height:1.1;
-margin-bottom:20px;
-}
+        /* Features Main Card */
+        .features-card {
+            width: 100%;
+            background-color: #080808;
+            border: 1px solid #222;
+            border-radius: 16px;
+            padding: 20px 15px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-shadow: inset 0 0 10px rgba(255, 255, 255, 0.05);
+            text-align: left;
+        }
 
-.highlight{
-background:linear-gradient(90deg,#00ff9d,#38bdf8);
--webkit-background-clip:text;
--webkit-text-fill-color:transparent;
-}
+        .feature-item {
+            font-size: 15px;
+            font-weight: 600;
+        }
 
-.hero p{
-font-size:18px;
-line-height:1.8;
-color:#b5bfd1;
-margin-bottom:30px;
-}
+        .stars {
+            color: #ff9900;
+            font-size: 16px;
+        }
 
-.buttons{
-display:flex;
-gap:15px;
-flex-wrap:wrap;
-}
+        /* Footer Tag Box */
+        .footer-box {
+            width: 100%;
+            border: 1.5px solid #fff;
+            border-radius: 6px;
+            padding: 10px;
+            font-size: 13px;
+            font-weight: bold;
+            line-height: 1.4;
+        }
 
-.btn{
-padding:16px 30px;
-border-radius:12px;
-text-decoration:none;
-font-weight:600;
-transition:.3s;
-}
+        /* Managed By Section (Clickable) */
+        .managed-by {
+            margin-top: 5px;
+            background-color: #0d131a;
+            border: 1px solid #1c2633;
+            border-radius: 12px;
+            padding: 10px 25px;
+            font-size: 14px;
+            color: #a0aab2;
+            width: 90%;
+            text-decoration: none;
+            display: block;
+            transition: 0.3s;
+        }
 
-.primary{
-background:linear-gradient(90deg,#00ff9d,#00d084);
-color:#000;
-}
+        .managed-by:hover {
+            border-color: #38b6ff;
+        }
 
-.secondary{
-border:1px solid rgba(255,255,255,.15);
-background:rgba(255,255,255,.05);
-color:#fff;
-}
-
-.btn:hover{
-transform:translateY(-4px);
-}
-
-.stats{
-display:flex;
-gap:30px;
-margin-top:40px;
-flex-wrap:wrap;
-}
-
-.stat h2{
-color:#00ff9d;
-font-size:32px;
-}
-
-.stat p{
-margin-top:5px;
-font-size:14px;
-color:#a5afc1;
-}
-
-.card{
-background:rgba(255,255,255,.06);
-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.08);
-padding:30px;
-border-radius:25px;
-box-shadow:0 0 30px rgba(0,255,157,.08);
-}
-
-.card h3{
-margin-bottom:20px;
-color:#00ff9d;
-}
-
-.list{
-display:flex;
-flex-direction:column;
-gap:15px;
-}
-
-.list div{
-padding:15px;
-background:rgba(255,255,255,.04);
-border-radius:12px;
-}
-
-.live{
-margin-top:25px;
-padding:18px;
-background:linear-gradient(90deg,#00ff9d20,#38bdf820);
-border-radius:15px;
-border:1px solid rgba(255,255,255,.08);
-}
-
-@media(max-width:900px){
-.hero-content{
-grid-template-columns:1fr;
-text-align:center;
-}
-
-.buttons{
-justify-content:center;
-}
-
-.stats{
-justify-content:center;
-}
-
-h1{
-font-size:42px;
-}
-}
-</style>
+        .managed-by span {
+            color: #38b6ff;
+            font-weight: bold;
+        }
+    </style>
 </head>
-
 <body>
 
-<section class="hero">
+    <div class="container">
+        <!-- Profile Image -->
+        <div class="profile-container">
+            <img src="https://i.ibb.co/sdZ2VtnJ/vx-KQu-Tj-QOVl73qgedt-G8n1l9g-Obu-PUvu-D2n5-I1y-Gh-Wf-Akj-CD73ah-Di0-Rb-Zj5zz1d-Ff-It-USH-Yyp-D0v9-F5zm.jpg" alt="Trade with Gautam Jha">
+        </div>
 
-<div class="hero-content">
+        <!-- Channel Title -->
+        <div class="title-box">
+            Trade with Gautam jha trading
+        </div>
 
-<div>
+        <!-- Button -->
+        <a href="https://t.me/+8TSdfmNYOoYwYjA1" class="btn-join">
+            JOIN NOW - FREE SIGNALS
+        </a>
 
-<div class="badge">
-🚀 India's Fast Growing Trading Community
-</div>
+        <!-- Click Here Text -->
+        <div class="click-here">
+            Click Here 👆
+        </div>
 
-<h1>
-Trade Smarter With
-<span class="highlight">MUNAAF</span>
-</h1>
+        <!-- Content Card -->
+        <div class="features-card">
+            <div class="feature-item">
+                📌 India No.1 Telegram Channel <span class="stars">★★★★★</span>
+            </div>
+            <div class="feature-item">
+                🚀 8 Years Experience Of Market
+            </div>
+            <div class="feature-item">
+                ✅ Risk Management
+            </div>
+            <div class="feature-item">
+                🎯 Accuracy More Then 90%
+            </div>
+            <div class="feature-item">
+                📊 Every Day Nifty50 Volume Research Levels
+            </div>
+        </div>
 
-<p>
-Get daily stock market insights, trending stocks, breakout opportunities,
-swing trading ideas, intraday setups and risk management strategies
-from experienced traders.
-</p>
+        <!-- Sub Footer Box -->
+        <div class="footer-box">
+            🗿 No Paid Promotions • No Fake Calls • 100% Transparent Performance
+        </div>
 
-<div class="buttons">
-<a href="https://t.me/+guLvlUgEjtNmZTQ1" class="btn primary">
-Join Telegram
-</a>
-</div>
-
-<div class="stats">
-
-<div class="stat">
-<h2>10K+</h2>
-<p>Active Traders</p>
-</div>
-
-<div class="stat">
-<h2>500+</h2>
-<p>Market Updates</p>
-</div>
-
-<div class="stat">
-<h2>95%</h2>
-<p>Community Satisfaction</p>
-</div>
-
-</div>
-
-</div>
-
-<div class="card">
-
-<h3>📈 What You'll Get</h3>
-
-<div class="list">
-<div>🔥 Trending Stocks Daily</div>
-<div>📊 Technical Analysis</div>
-<div>💰 Swing Trading Ideas</div>
-<div>⚡ Intraday Setups</div>
-<div>🛡️ Risk Management</div>
-<div>🎯 Trading Psychology</div>
-</div>
-
-<div class="live">
-<b>LIVE MARKET EDGE</b><br>
-Daily actionable insights delivered directly to our community.
-</div>
-
-</div>
-
-</div>
-
-</section>
-
+        <!-- Managed By Badge (Linked) -->
+        <a href="https://t.me/+jViKIQmWTLFmNjNl" class="managed-by" target="_blank">
+            Managed by <span>Ai ads agency</span>
+        </a>
+    </div>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1643007787324396');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1643007787324396&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 </body>
 </html>
